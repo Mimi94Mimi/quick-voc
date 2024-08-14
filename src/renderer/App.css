@@ -6,31 +6,52 @@ body {
   position: relative;
   color: white;
   height: 100vh;
-  background: linear-gradient(
-    200.96deg,
-    #fedc2a -29.09%,
-    #dd5789 51.77%,
-    #7a2c9e 129.35%
-  );
+  background: rgb(211, 242, 255);
   font-family: sans-serif;
   overflow-y: hidden;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
+}
+
+#entry-container {
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+#textarea-label {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--accent-color-1);
+    font-weight: 700;
+}
+
+textarea {
+    resize: none;
+    outline: none;
+    border-color: var(--accent-color-1);
+    border-radius: 5px;
+    border-width: 2px;
+    font-family: sans-serif;
 }
 
 button {
-  background-color: white;
-  padding: 10px 20px;
+  background-color: var(--accent-color-1);
   border-radius: 10px;
   border: none;
   appearance: none;
-  font-size: 1.3rem;
-  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
-    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+  color: white;
+  font-size: 16px;
   transition: all ease-in 0.1s;
   cursor: pointer;
-  opacity: 0.9;
+}
+
+#continue {
+    margin-left: 30px;
+    position: relative;
+    bottom: 5px;
 }
 
 button:hover {
@@ -42,16 +63,44 @@ li {
   list-style: none;
 }
 
-a {
-  text-decoration: none;
-  height: fit-content;
-  width: fit-content;
-  margin: 10px;
+p.word-token {
+  display: inline;
 }
 
-a:hover {
-  opacity: 1;
-  text-decoration: none;
+a.word-token {
+  display: inline;
+}
+
+a.word-token.chosen {
+  color: var(--word-selected);
+}
+ 
+a.word-token:hover {
+  display: inline;
+  color: var(--word-selected);
+  cursor: pointer;
+}
+
+div.select-word {
+    background-color: var(--primary-color-2);
+    border-radius: 10px;
+    padding: 10px;
+    padding-bottom: 5px;
+    color: black;
+}
+
+div.button-section {
+    margin-top: 10px;
+}
+
+div.select-word button {
+    margin-right: 10px;
+}
+
+#reset {
+    position: absolute;
+    right: 0px;
+    top: 300px;
 }
 
 .Hello {
@@ -59,4 +108,11 @@ a:hover {
   justify-content: center;
   align-items: center;
   margin: 20px 0;
+}
+
+:root {
+    --primary-color-1: rgb(211, 242, 255);
+    --primary-color-2: rgb(159, 226, 255);
+    --accent-color-1: rgb(0, 123, 175);
+    --word-selected: rgb(165, 8, 197);
 }
