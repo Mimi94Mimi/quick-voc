@@ -6,23 +6,39 @@ body {
   position: relative;
   color: white;
   height: 100vh;
-  background: rgb(211, 242, 255);
+  background: var(--primary-color-1);
   font-family: sans-serif;
   overflow-y: hidden;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: start;
 }
 
-#entry-container {
-    position: relative;
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--accent-color-1);
+    position: fixed;
+    width: 100%;
     top: 0px;
     left: 0px;
+    color: var(--primary-color-1);
+}
+
+.nav-link {
+    color: var(--primary-color-1);
+    font-style: normal;
+}
+
+.page-container {
+    position: relative;
+    top: 20px;
+    left: 0px;
+    padding: 5px;
 }
 
 #textarea-label {
     display: inline-block;
-    margin-top: 10px;
     margin-bottom: 10px;
     color: var(--accent-color-1);
     font-weight: 700;
@@ -49,7 +65,7 @@ button {
 }
 
 #continue {
-    margin-left: 30px;
+    margin-left: 20px;
     position: relative;
     bottom: 5px;
 }
@@ -87,6 +103,7 @@ div.select-word {
     padding: 10px;
     padding-bottom: 5px;
     color: black;
+    font-size: 14px;
 }
 
 div.button-section {
@@ -103,11 +120,70 @@ div.select-word button {
     top: 300px;
 }
 
+.top-carousel {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 46px;
+    text-align: center;
+    background-color:var(--primary-color-2);
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+
+    .top-carousel-container {
+        width: 320px;
+        overflow: hidden;
+        margin-left: 10px;
+
+        .carousel-change {
+            display: flex;
+            flex-direction: row;
+            transition: transform 0.5s;
+        }
+    }
+    
+    .control {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 10px;
+        margin-top: 50px;
+        button {
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            background-color: var(--accent-color-1);
+            border-width: 0;
+        }
+    }
+}
+
 .Hello {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 20px 0;
+}
+
+.top-carousel-element {
+    text-align: start;
+    .word {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        color: black;
+        font-weight: bold;
+    }
+}
+
+.word-example{
+    text-align: start;
+    p {
+        display: inline;
+        font-size: 14px;
+    }
 }
 
 :root {

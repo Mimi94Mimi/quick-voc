@@ -71,7 +71,7 @@ const createWindow = async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    resizable: false,
+    //resizable: false,
     width: 400,
     height: 400,
     icon: getAssetPath('icon.png'),
