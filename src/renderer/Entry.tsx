@@ -4,7 +4,7 @@ import { useEffect, useState, useSyncExternalStore } from 'react';
 
 function SentenceSplit({sentence, word, clickOnWord}: any) {
     const splitIntoWords = (s) => {
-        return s.split(/([^A-Za-z])/);
+        return s.split(/([^A-Za-z\-])/);
     }
 
     const [sentenceTokens, setSentenceTokens] = useState(splitIntoWords(sentence))
@@ -14,7 +14,7 @@ function SentenceSplit({sentence, word, clickOnWord}: any) {
     }, [sentenceTokens])
 
     let TokenElements = sentenceTokens.map((token) => {
-        const isAlpha = (str) => /^[a-zA-Z]*$/.test(str);
+        const isAlpha = (str) => /^[a-zA-Z\-]*$/.test(str);
         if(isAlpha(token)){
             if(word===token){
                 return (
@@ -40,11 +40,25 @@ function SentenceSplit({sentence, word, clickOnWord}: any) {
     )
 }
 
+function ReferenceInput({reference, setReference}: any) {
+    const onChange = (event: any) => {
+        setReference(event.target.value)
+    }
+
+    return (
+        <label className='ref-input-label'>
+            <span>from:</span>
+            <input type="text" value={reference} onChange={onChange} />
+        </label>
+    )
+}
+
 export default function Entry() {
     const [sentence, setSentence] = useState('');
     const [word, setWord] = useState('');
     const [textAreaDisabled, setTextAreaDisabled] = useState(false);
     const [showSelectWord, setShowSelectWord] = useState(false);
+    const [reference, setReference] = useState('');
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
@@ -82,13 +96,22 @@ export default function Entry() {
         setWord('')
     }
 
+    const getTime = () => {
+        let date = new Date()
+        date.toISOString().split('T')[0]
+        const offset = date.getTimezoneOffset()
+        date = new Date(date.getTime() - (offset*60*1000))
+        return date.toISOString().split('T')[0]
+    }
+
     const storeWord = (word: string) => {
 
         let item = {
             "sentence": sentence,
             "word": word,
-            "from": "",
-            "mandarin": ""
+            "ref": reference,
+            "mandarin": "",
+            "time": getTime()
         }
         var vocabulary = localStorage.getItem("vocabulary")
         if (vocabulary === null) {
@@ -135,9 +158,12 @@ export default function Entry() {
                 </div>
             </div>
             }
-            <button type="button" id='reset' onClick={
-                (e) => {localStorage.removeItem("vocabulary")}
-            }>Reset all</button>
+            <div className='entry-buttom-bar'>
+                <ReferenceInput className='ref-input' reference={reference} setReference={setReference}></ReferenceInput>
+                <button type="button" id='reset' onClick={
+                    (e) => {localStorage.removeItem("vocabulary")}
+                }>Reset all</button>
+            </div>
         </div>
     );
 }

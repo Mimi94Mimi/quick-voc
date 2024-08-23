@@ -36,8 +36,8 @@ function WordCarousel({wordList}: any) {
 
     const wordListLength = wordList === null ? 0 : wordList.length
     const carouselWidth = 320;
-    const prevButtonDisabled = index === 0 ? true : false
-    const nextButtonDisabled = index === wordListLength - 1 ? true : false
+    const prevButtonVisibility = index === 0 ? 'hidden' : 'visible'
+    const nextButtonVisibility = index === wordListLength - 1 ? 'hidden' : 'visible'
 
     const handleCarouselIndex = (offset: number) => {
         if (index + offset >= wordListLength || index + offset < 0) {
@@ -61,6 +61,10 @@ function WordCarousel({wordList}: any) {
                     <div className='word'>{element.word}</div>
                     <WordExample sentence={element.sentence} word={element.word}></WordExample>
                 </div>
+                <div className='word-info'>
+                    <span>{element.ref}</span>
+                    <span>{element.time}</span>
+                </div>
             </div>
         ));
     }
@@ -73,14 +77,15 @@ function WordCarousel({wordList}: any) {
                 <div className="carousel-change">{TopCarouselElements(wordList)}</div>
             </div>
             <div className="control">
-                <button onClick={() => handleCarouselIndex(-1)} disabled={prevButtonDisabled}>
+                <button onClick={() => handleCarouselIndex(-1)} style={{visibility: prevButtonVisibility}}>
                     <FontAwesomeIcon icon={faArrowLeft} />
                 </button>
-                <button onClick={() => handleCarouselIndex(1)} disabled={nextButtonDisabled}>
+                <button onClick={() => handleCarouselIndex(1)} style={{visibility: nextButtonVisibility}}>
                     <FontAwesomeIcon icon={faArrowRight} />
                 </button>
             </div>
             </div>
+
             }
             {(wordList == null) &&
             <h3>

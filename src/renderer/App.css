@@ -12,6 +12,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: start;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; 
 }
 
 nav {
@@ -28,6 +34,7 @@ nav {
 .nav-link {
     color: var(--primary-color-1);
     font-style: normal;
+    text-decoration: none;
 }
 
 .page-container {
@@ -104,6 +111,7 @@ div.select-word {
     padding-bottom: 5px;
     color: black;
     font-size: 14px;
+    width: 320px;
 }
 
 div.button-section {
@@ -114,10 +122,36 @@ div.select-word button {
     margin-right: 10px;
 }
 
-#reset {
+.entry-buttom-bar {
     position: absolute;
-    right: 0px;
-    top: 300px;
+    top: 280px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .ref-input {
+    }
+
+    #reset {
+        right: 0px;
+    }
+}
+
+.ref-input-label {
+    span {
+        color: var(--accent-color-1);
+        font-weight: bold;
+        margin-right: 5px;
+    }
+    input {
+        width: 100px;
+        outline: none;
+        border-color: var(--accent-color-1);
+        border-radius: 5px;
+        border-width: 2px;
+        border-style: solid;
+    }
 }
 
 .top-carousel {
@@ -150,7 +184,6 @@ div.select-word button {
         justify-content: space-between;
         align-items: flex-end;
         margin-bottom: 10px;
-        margin-top: 50px;
         button {
             align-items: center;
             width: 35px;
@@ -170,13 +203,27 @@ div.select-word button {
 
 .top-carousel-element {
     text-align: start;
+    margin-bottom: 0px;
+    height: 150px;
+    position: relative;
     .word {
         margin-top: 15px;
         margin-bottom: 10px;
         color: black;
         font-weight: bold;
     }
+
+    .word-info {
+        color: black;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        position: absolute;
+        bottom: 5px;
+    }
 }
+
 
 .word-example{
     text-align: start;
