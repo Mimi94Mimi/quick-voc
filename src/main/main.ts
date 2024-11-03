@@ -71,7 +71,7 @@ const createWindow = async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    //resizable: false,
+    resizable: false,
     width: 400,
     height: 400,
     icon: getAssetPath('icon.png'),
@@ -99,8 +99,8 @@ const createWindow = async () => {
     mainWindow = null;
   });
 
-  const menuBuilder = new MenuBuilder(mainWindow);
-  menuBuilder.buildMenu();
+  //   const menuBuilder = new MenuBuilder(mainWindow);
+  //   menuBuilder.buildMenu();
 
   // Open urls in the user's browser
   mainWindow.webContents.setWindowOpenHandler((edata) => {

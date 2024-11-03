@@ -225,7 +225,7 @@ div.select-word button {
 }
 
 
-.word-example{
+.word-example {
     text-align: start;
     p {
         display: inline;
@@ -233,9 +233,37 @@ div.select-word button {
     }
 }
 
+.word-options {
+    position: fixed;
+    top: 58px;
+    right: 24px;
+    button {
+        padding-right: 16px;
+        background-color: var(--primary-color-2);
+        color: var(--accent-color-1);
+    }
+}
+
+.pop-out {
+    background-color: var(--accent-color-1);
+    width: 128px;
+    height: 32px;
+    position: fixed;
+    top: 84px;
+    right: 32px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px var(--accent-color-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
 :root {
     --primary-color-1: rgb(211, 242, 255);
     --primary-color-2: rgb(159, 226, 255);
     --accent-color-1: rgb(0, 123, 175);
     --word-selected: rgb(165, 8, 197);
+    --transparent: rgba(0, 0, 0, 0);
 }
