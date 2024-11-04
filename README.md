@@ -1,5 +1,6 @@
 # Introduction
-This project generates QuickVocab, a desktop app, helping you to quickly note new vocabularies as long as you saw, which is devoloped from electron-react-boilerplate framework ([Link](https://github.com/electron-react-boilerplate/electron-react-boilerplate)).
+This project generates QuickVocab, a desktop app, helping you to quickly note new vocabularies as long as you saw, which is devoloped from electron-react-boilerplate framework ([Link](https://github.com/electron-react-boilerplate/electron-react-boilerplate)).  
+![image](https://github.com/Mimi94Mimi/quick-voc/blob/main/quick_vocab_intro.gif)
 # Get started
 1. Clone the whole repository
 ```
