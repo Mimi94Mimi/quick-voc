@@ -4,9 +4,9 @@ import {
   Link,
   HashRouter,
 } from 'react-router-dom';
-import './App.css';
-import Entry from './Entry';
-import WordList from './WordList';
+import '@/App.css';
+import Entry from '@/pages/Entry';
+import WordList from '@/pages/WordList';
 
 export default function App() {
   return (
@@ -22,7 +22,7 @@ export default function App() {
 
       <Routes>
         <Route index element={<Entry />} />
-        <Route path="list" element={<WordList />} />
+        <Route path="/list" element={<WordList />} />
       </Routes>
     </HashRouter>
   );

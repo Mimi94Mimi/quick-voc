@@ -1,7 +1,3 @@
-/*
- * @NOTE: Prepend a `~` to css file paths that are in your node_modules
- *        See https://github.com/webpack-contrib/sass-loader#imports
- */
 body {
   position: relative;
   color: white;
@@ -10,7 +6,6 @@ body {
   font-family: sans-serif;
   overflow-y: hidden;
   display: flex;
-  justify-content: center;
   align-items: start;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -18,6 +13,14 @@ body {
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; 
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    /* border-width: 1px;
+    border-style: solid;
+    border-color: black; */
 }
 
 nav {
@@ -35,6 +38,50 @@ nav {
     color: var(--primary-color-1);
     font-style: normal;
     text-decoration: none;
+}
+
+.login-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    /* border-width: 1px;
+    border-style: solid;
+    border-color: black; */
+    color: black;
+    .login-form {
+        align-self: start;
+        width: 95%;
+        margin-bottom: 20px;
+        /* border-width: 1px;
+        border-style: solid;
+        border-color: black; */
+        color: black;
+        .login-entry {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            margin-bottom: 10px;
+            input {
+                width: 100%;
+            }
+        }
+    }
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        /* border-width: 1px;
+        border-style: solid;
+        border-color: black; */
+    }
+    .signup {
+        /* margin-top: 40px; */
+    }
 }
 
 .page-container {
@@ -258,7 +305,7 @@ div.select-word button {
     align-items: center;
     font-size: 14px;
     cursor: pointer;
-}
+} 
 
 :root {
     --primary-color-1: rgb(211, 242, 255);

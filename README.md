@@ -1,14 +1,13 @@
 # Introduction
-This project generates QuickVocab, a desktop app, helping you to quickly note new vocabularies as long as you saw, which is devoloped from electron-react-boilerplate framework ([Link](https://github.com/electron-react-boilerplate/electron-react-boilerplate)).  
+This project builds QuickVocab, a desktop app helping you to quickly note new vocabularies as long as you saw.
 ![image](https://github.com/Mimi94Mimi/quick-voc/blob/main/quick_vocab_intro.gif)
-# Get started
-1. Clone the whole repository
-```
-git clone https://github.com/Mimi94Mimi/quick-voc.git
-```
-2. Enter the repository and execute the setup file
-```
-cd quick-voc
-& '.\release\QuickVocab Setup 4.6.0.exe'
-```
-3. QuickVocab would pop out, and create a shortcut on your desktop. You can use QuickVocab as you wish :)
+# Environment
+macOS with Apple Silicon (darwin-arm64)
+# How to run
+This project is created, run, and built using Electron Forge, please check out [Electron Forge Docs](https://www.electronforge.io/) if more information is needed.
+### Install dependencies
+`npm install`
+### Start the app with webpack
+`npm start`
+### Building distributables
+`npm run make` and distributables would be built in `out/` folder.
